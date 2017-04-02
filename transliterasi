@@ -1,0 +1,792 @@
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    <title>Latin Konvert Jawa Unicode </title>       </head>  <body bgcolor="white">   <meta name="viewport" content="width=device-width, initial-scale=1">        <meta http-equiv=Content-Style-Type content=text/css>    <text id="feld1" style=" font-family:'Scheherazade',Arial,sans-serif; onKeyUp="if(document.getElementById('autoUpdate').checked==1)makeHTML();"></text><script src="../js/lkj.js" type="text/javascript"></script><script src="../js/lkj2.js" type="text/javascript"></script><link rel="stylesheet" type="text/css" href="../css/lkj.css"></script><script type="text/javascript" src="../js/lkj3.js"></script><script type="text/javascript">make_copy_button(document.getElementById("feld2"));</script>    <style type="text/css">        @font-face {        font-family: amukti;        src: url("../lkj/amukti.eot") /* EOT file for IE */        }        @font-face {        font-family: amukti;        src: url("../lkj/amukti.ttf") /* TTF file for CSS3 browsers */        }        @font-face {        font-family: Noto;        src: url("Noto.ttf") /* TTF file for CSS3 browsers */        }        @font-face {        font-family: Latha;        src: url("Latha.woff2") /* WOFF2 file for CSS3 browsers */        }        span.header {        font-family: amukti;        font-weight: bold;        color: red        }        .alltamil1 table {        font-family: amukti; FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #000000        }        .alltamil2 table {        font-family: amukti; FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #000000        }        .alltamil0 table {        font-family: amukti; FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #000000        }        .fontt {        font-size: .9em;        }        .container { width: 100% border: 0px solid #b7d2e7; }        .textareaContainer {        font-family: "amukti"        align: top        display: block;        border: 0px solid #113250;        padding: 0px;        }        body {	font-size: 0.85em;	font-family: "amukti", sans-serif;	background:#0ff;}p, { font-family: "amukti";	font-size: 2.1em;}h1 { font-family: "amukti";	font-size: 1.1em;	margin-top: 5px;	margin-bottom: 2px;	padding: 0;}h3 { font-family: "amukti";	font-size: 1.em;	margin-top: 5px;	margin-bottom: 2px;	padding: 0;	}td { font-family: "amukti";	font-size: 1.5em;	
+}
+#page-wrap {
+	margin: 0px auto;
+	width: 100%;
+}
+textarea#LatinText, textarea#JawaText {
+ font-size: 1.5em;
+	width: 100%;
+	height: 80px;
+	border: 3px solid #f0f;
+	padding: 5px;
+	font-family: "amukti" ;
+    background: white;
+}
+textarea#JawaText {
+	font-family: "amukti", sans-serif;
+	width: 100%;
+	font-size: 2.0em;
+	height: 180px;
+}
+.footer {
+	font-size:0.4em;
+}
+button {
+    background-color: #4CAF50; /* Green */
+    font-family: "amukti";
+    width: 45px;
+	   height: 45px;
+    border: none;
+    color: white;
+    text-align: top-center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 5px 1px;
+    cursor: pointer;
+    border-radius: 15px;
+    box-shadow: 0 5px #999;
+}
+button:hover {background-color: #FF8C00}
+button:active {
+  background-color: #FF8C00;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+button2 {background-color: #008CBA;} /* Blue */
+button3 {background-color: #f44336;} /* Red */ 
+button4 {background-color: #e7e7e7; color: black;} /* Gray */ 
+button5 {background-color: #555555;} /* Black */
+}
+.hint {
+	font-size:0.9em;
+	color: blue;
+	text-align: center;
+	padding: 0px; margin: 0px;
+}
+</style>
+<script type='text/javascript'>
+/**
+ (c) 2016 MOUSLY JÉNGGOT
+ */
+////////////////////////////////////////////////////////////////////////////
+var JAWA = new Array();
+    // penghujung
+    JAWA['+ng'] = '\uA981';
+    JAWA['+nk'] = '\uA981';
+    JAWA['+ basa'] = 'ꦨꦰ'; 
+    JAWA['+r'] = 'ꦫ꧀';
+    JAWA['+h'] = '\uA983';
+    JAWA['+ï'] = '\uA9C0';
+    // vokal mandiri
+    JAWA['A'] = '\uA984';
+    JAWA['AÈ'] = '\uA984ꦲꦺ';
+    JAWA['AÉ'] = '\uA984ꦲꦺ';
+    JAWA['AÊ'] = '\uA984ꦲꦼ';
+    JAWA['AE'] = '\uA984ꦲꦼ';
+    JAWA['AO'] = '\uA984ꦲꦺꦴ';
+    JAWA['AA'] = '\uA984\uA9B4';
+    JAWA['AI'] = '\uA98D';
+    JAWA['AU'] = '\uA98E\uA9B4';
+    JAWA['II'] = '\uA986';
+    JAWA['UU'] = '\uA988\uA9B4';
+    JAWA['O'] = '\uA98E';
+    JAWA['É'] = '\uA98C';
+    JAWA['EE'] = '\uA98C';
+    JAWA['È'] = '\uA98C';
+    JAWA['U'] = '\uA988';
+    JAWA['I'] = '\uA985';
+    JAWA['E'] = '\uA984\uA9BC';
+    JAWA['Ê'] = '\uA984\uA9BC';
+    JAWA['IE'] = '\uA987';
+    JAWA['IA'] = 'ꦅꦪ';
+    JAWA['IO'] = 'ꦅꦪꦺꦴ';
+    JAWA['IU'] = 'ꦅꦪꦸ';
+    JAWA['IAI'] = 'ꦅꦪꦻ';
+    JAWA['IAU'] = 'ꦅꦪꦻꦴ';
+    JAWA['IÊO'] = 'ꦅꦪꦼꦴ';
+    JAWA['IEO'] = 'ꦅꦪꦼꦴ'; 
+    JAWA['OA'] = 'ꦎꦮ'; 
+    JAWA['OE'] = 'ꦎꦮꦼ'; 
+    JAWA['OÊ'] = 'ꦎꦮꦼ'; 
+    JAWA['OÈ'] = 'ꦎꦮꦺ'; 
+    JAWA['OÈ'] = 'ꦎꦮꦺ'; 
+    JAWA['OAI'] = 'ꦎꦮꦻ';  
+    JAWA['OAU'] = 'ꦎꦮꦻꦴ'; 
+    JAWA['OAO'] = 'ꦎꦮꦺꦴ'; 
+    JAWA['UA'] = 'ꦈꦮ'; 
+    JAWA['UE'] = 'ꦈꦮꦼ'; 
+    JAWA['UÊ'] = 'ꦈꦮꦼ'; 
+    JAWA['UÈ'] = 'ꦈꦮꦺ'; 
+    JAWA['UÉ'] = 'ꦈꦮꦺ'; 
+    JAWA['UAU'] = 'ꦈꦮꦻꦴ'; 
+    JAWA['UAI'] = 'ꦈꦮꦻ'; 
+    JAWA['UAO'] = 'ꦈꦮꦺꦴ';
+    JAWA['EO'] = '\uA984\uA9BC\uA9B4';
+    JAWA['\u000A'] = '\u000A꧋';
+    // konsonan ngalagena
+    
+    JAWA['k'] = '\uA98f';
+    JAWA['q'] = '\uA990';
+    JAWA['g'] = '\uA992';
+    JAWA['ng'] = '\uA994';
+    JAWA['c'] = '\uA995';
+    JAWA['j'] = '\uA997';
+    JAWA['z'] = 'ꦱ';
+    JAWA['nnyy'] = '\uA99A';
+    JAWA['t'] = '\uA9A0';
+    JAWA['d'] = '\uA9A2';
+    JAWA['n'] = '\uA9A4';
+    JAWA['p'] = '\uA9A5';
+    JAWA['f'] = '\uA9A5\uA9B3';
+    JAWA['v'] = '\uA9AE\uA9B3';
+    JAWA['b'] = '\uA9A7';
+    JAWA['m'] = '\uA9A9';
+    JAWA['y'] = '\uA9AA';
+    JAWA['r'] = '\uA9AB';
+    JAWA['l'] = '\uA9AD';
+    JAWA['w'] = '\uA9AE';
+    JAWA['s'] = '\uA9B1';
+    JAWA['bh'] = '\uA9A8'
+    JAWA['kh'] = '\uA991';
+    JAWA['gh'] = '\uA993';
+    JAWA['th'] = '\uA9A1';
+    JAWA['ch'] = '\uA996';
+    JAWA['h'] = '\uA9B2';
+    JAWA['ṣ'] = '\uA9B0';
+    JAWA['ss'] = '\uA9B0'; 
+    JAWA['sur'] = 'ꦯꦸꦫ'; 
+    JAWA['sir'] = 'ꦯꦶ'; 
+    JAWA['sor'] = 'ꦯꦺꦴꦫ'; 
+    JAWA['ser'] = 'ꦯꦼꦫ'; 
+    JAWA['sair'] = 'ꦯꦻꦫ'; 
+    JAWA['saur'] = 'ꦯꦻꦴꦫ'; 
+    JAWA['sêr'] = 'ꦯꦼꦫ'; 
+    JAWA['sèr'] = 'ꦯꦺꦫ';  
+    JAWA['sér'] = 'ꦯꦺꦫ';
+    JAWA['syr'] = 'ꦯꦾꦫ';
+    JAWA['sr'] = 'ꦯꦿ'; 
+    JAWA['sl'] = 'ꦯ꧀ꦭ';  
+    JAWA['sw'] = 'ꦯ꧀ꦮ'; 
+    JAWA['sk'] = 'ꦰ꧀ꦏ';  
+    JAWA['sp'] = 'ꦰ꧀ꦥ'; 
+    JAWA['sn'] = 'ꦰ꧀ꦤ';   
+    JAWA['ph'] = '\uA9A6';
+    JAWA['dh'] = '\uA9A3';
+    JAWA['jh'] = '\uA999';
+    JAWA['ṭh'] = '\uA99C';
+    JAWA['rh'] = '\uA9AC';
+    JAWA['nh'] = '\uA99F';
+    JAWA['ç'] = '\uA9AF';
+    JAWA['sh'] = '\uA9AF';
+    JAWA['jn'] = '\uA998';
+    JAWA['sjn'] = '\uA9AF\uA9C0\uA998';
+    JAWA['sj'] = '\uA9AF\uA9C0\uA997';
+    JAWA['sch'] = '\uA9AF\uA9C0\uA996';
+    JAWA['sc'] = '\uA9AF\uA9C0\uA995';
+    JAWA['sjh'] = '\uA9AF\uA9C0\uA999';
+    JAWA['nc'] = '\uA99A\uA9C0\uA995';
+    JAWA['nch'] = '\uA99A\uA9C0\uA996';
+    JAWA['nj'] = '\uA99A\uA9C0\uA997';
+    JAWA['njn'] = '\uA99A\uA9C0\uA998';
+    JAWA['njh'] = '\uA99A\uA9C0\uA999';
+    JAWA['n c'] = '\uA9A4\uA9C0\uA995';
+    JAWA['n d'] = '\uA9A4\uA9C0\uA996';
+    JAWA['s j'] = '\uA9A4\uA9C0\uA997';
+    JAWA['n j'] = '\uA9A4\uA9C0\uA999';
+    JAWA['k s'] = '\uA98F\uA9C0\uA9B1';    
+    JAWA['hb'] = '\uA9B2\uA9C0\uA9A7';    
+    JAWA['hc'] = '\uA9B2\uA9C0\uA995';    
+    JAWA['hch'] = '\uA9B2\uA9C0\uA996';    
+    JAWA['hg'] = '\uA9B2\uA9C0\uA992';    
+    JAWA['hgh'] = '\uA9B2\uA9C0\uA993';    
+    JAWA['hbh'] = '\uA9B2\uA9C0\uA9A8';    
+    JAWA['hj'] = '\uA9B2\uA9C0\uA997';    
+    JAWA['hjh'] = '\uA9B2\uA9C0\uA999';    
+    JAWA['ht'] = '\uA9B2\uA9C0\uA9A0';    
+    JAWA['hth'] = '\uA9B2\uA9C0\uA9A1';    
+    JAWA['hdh'] = '\uA9B2\uA9C0\uA9A3';    
+    JAWA['hp'] = '\uA9B2\uA9C0\uA9A5';    
+    JAWA['hph'] = '\uA9B2\uA9C0\uA9A6';    
+    JAWA['hs'] = '\uA9B2\uA9C0ꦰ';    
+    JAWA['hṣ'] = '\uA9B2\uA9C0\uA9B0';    
+    JAWA['hḍ'] = '\uA9B2\uA9C0\uA99D';    
+    JAWA['hḍh'] = '\uA9B2\uA9C0\uA99E';    
+    JAWA['hk'] = '\uA9B2\uA9C0\uA98F';    
+    JAWA['hkh'] = '\uA9B2\uA9C0\uA991';    
+    JAWA['hṭ'] = '\uA9B2\uA9C0\uA99B';    
+    JAWA['hṭh'] = '\uA9B2\uA9C0\uA99C';
+    JAWA['ks'] = '\uA98F\uA9C0\uA9B0';
+    JAWA['hm'] = '\uA9B2\uA9C0\uA9A9';
+    JAWA['hl'] = '\uA9B2\uA9C0\uA9AD';
+    JAWA['hn'] = '\uA9B2\uA9C0\uA9A4';
+    JAWA['hd'] = '\uA9B2\uA9C0\uA9A2';
+    JAWA['dz'] = '\uA9A2\uA9B3';
+    JAWA['hq'] = 'ꦲ꧀ꦐ';
+    JAWA['hf'] = 'ꦲ꧀ꦥ꦳';
+    JAWA['ngf'] = 'ꦔ꧀ꦥ꦳';
+    JAWA['ngv'] = 'ꦔ꧀ꦮ꦳';
+    JAWA['ngj'] = 'ꦔ꧀ꦗ';
+    JAWA['ngbh'] = 'ꦔ꧀ꦨ';
+    JAWA['ngh'] = 'ꦔ꧀ꦲ';
+    JAWA['ngñy'] = 'ꦔ꧀ꦚ';
+    JAWA['ngnny'] = 'ꦔ꧀ꦚ';
+    JAWA['ngsh'] = 'ꦔ꧀ꦚ';  
+    JAWA['hw'] = '\uA9B2\uA9C0\uA9AE';
+    JAWA['ngb'] = '\uA994꧀ꦧ';
+    JAWA['ngc'] = '\uA994꧀ꦕ';
+    JAWA['ngd'] = '\uA994꧀ꦢ';
+    JAWA['ngg'] = '\uA994꧀ꦒ';
+    JAWA['ngl'] = '\uA994꧀ꦭ';
+    JAWA['ngn'] = 'ꦔ꧀ꦤ';
+    JAWA['ngṣ'] = 'ꦔ꧀ꦰ';
+    JAWA['ngp'] = 'ꦔ꧀ꦥ';
+    JAWA['ngph'] = 'ꦔ꧀ꦦ';
+    JAWA['ngdh'] = 'ꦔ꧀ꦣ';
+    JAWA['ngḍ'] = 'ꦔ꧀ꦝ';
+    JAWA['ngḍh'] = 'ꦔ꧀ꦞ';
+    JAWA['ngm'] = 'ꦔ꧀ꦩ';
+    JAWA['ngth'] = 'ꦔ꧀ꦡ';
+    JAWA['ngṭ'] = 'ꦔ꧀ꦛ';
+    JAWA['ngṭh'] = 'ꦔ꧀ꦜ';
+    JAWA['ngjh'] = 'ꦔ꧀ꦙ';
+    JAWA['nggh'] = 'ꦔ꧀ꦓ';
+    JAWA['ngch'] = 'ꦔ꧀ꦖ';
+    JAWA['ngkh'] = 'ꦔ꧀ꦑ';
+    JAWA['aia'] = 'ꦻꦪ';
+    JAWA['ñy'] = 'ꦚ';
+    JAWA['nk'] = 'ꦔ';
+    JAWA['ngk'] = 'ꦔ꧀ꦏ';
+    JAWA['dars'] = 'ꦢꦫ꧀ꦯ'; 
+    JAWA['dors'] = 'ꦢꦺꦴꦫ꧀ꦯ'; 
+    JAWA['durs'] = 'ꦢꦸꦫ꧀ꦯ'; 
+    JAWA['ders'] = 'ꦢꦼꦫ꧀ꦯ'; 
+    JAWA['dêrs'] = 'ꦢꦼꦫ꧀ꦯ'; 
+    JAWA['dèrs'] = 'ꦢꦺꦫ꧀ꦯ'; 
+    JAWA['dérs'] = 'ꦢꦺꦫ꧀ꦯ'; 
+    JAWA['dairs'] = 'ꦢꦻꦫ꧀ꦯ'; 
+    JAWA['daurs'] = 'ꦢꦻꦴꦫ꧀ꦯ'; 
+    JAWA['deors'] = 'ꦢꦼꦴꦫ꧀ꦯ';      
+    JAWA['ny'] = 'ꦤꦾ';
+    JAWA['ngs'] = '\uA994꧀ꦱ';
+    JAWA['ngt'] = '\uA994꧀ꦠ';
+    JAWA['ngw'] = '\uA994꧀ꦮ';
+    JAWA['ngy'] = 'ꦔꦾ';
+    JAWA['ngç'] = 'ꦔ꧀ꦚ';
+    JAWA['rt'] = '‌ꦫ꧀ꦠ꧀ꦠ'; 
+    JAWA['rth'] = 'ꦫ꧀ꦡ'; 
+    JAWA['rd'] =  'ꦫ꧀ꦢ꧀ꦢ'; 
+    JAWA['rdh'] = 'ꦫ꧀ꦢ꧀ꦣ'; 
+    JAWA['rk'] = 'ꦫ꧀ꦏ꧀ꦏ';
+    JAWA['rḍ'] = 'ꦫ꧀ꦢ꧀ꦝ'; 
+    JAWA['rḍh'] = 'ꦫ꧀ꦢ꧀ꦞ'; 
+    JAWA['rg'] = 'ꦫ꧀ꦒ꧀ꦒ'; 
+    JAWA['rch'] = 'ꦫ꧀ꦕ꧀ꦖ';
+ 
+    JAWA['rṭ'] = 'ꦫ꧀ꦠ꧀ꦛ'; 
+    JAWA['rṭh'] = 'ꦫ꧀ꦠ꧀ꦛ';  
+ 
+    JAWA['rc'] = 'ꦫ꧀ꦕ꧀ꦕ'; 
+    JAWA['rw'] = 'ꦫ꧀ꦮ꧀ꦮ'; 
+    JAWA['ry'] = 'ꦫ꧀ꦪꦾ';
+ 
+    JAWA['rn'] = 'ꦫ꧀ꦟ꧀ꦤ'; 
+    JAWA['rp'] = 'ꦫ꧀ꦥ꧀ꦥ'; 
+    JAWA['rm'] = 'ꦫ꧀ꦩ꧀ꦩ'; 
+    JAWA['rl'] = 'ꦫ꧀ꦭ꧀ꦭ'; 
+    JAWA['rj'] = 'ꦫ꧀ꦗ꧀ꦗ'; 
+    JAWA['rb'] = 'ꦫ꧀ꦧ꧀ꦧ'; 
+    JAWA['rq'] = 'ꦫ꧀ꦏ꧀ꦐ';
+    JAWA['dhh'] = 'ꦝ';
+    JAWA['thh'] = 'ꦛ'; 
+    JAWA['ps'] = 'ꦥ꧀ꦰ';
+    JAWA['bs'] = 'ꦧ꧀ꦰ';
+    JAWA['ras'] = 'ꦫꦰ';
+ 
+    JAWA['rbh'] = 'ꦫ꧀ꦨ'; 
+    JAWA['rs'] = 'ꦫ꧀ꦰ'; 
+    JAWA['rsh'] = 'ꦫ꧀ꦯ'; 
+    JAWA['rh'] = 'ꦫ꧀ꦲ';  
+    JAWA['rgh'] = 'ꦫ꧀ꦓ'; 
+    JAWA['rjh'] = 'ꦫ꧀ꦙ'; 
+    JAWA['rkh'] = 'ꦫ꧀ꦑ'; 
+    JAWA['rph'] = 'ꦫ꧀ꦦ'; 
+    JAWA['rnh'] = 'ꦫ꧀ꦟ'; 
+    JAWA['id'] = 'ꦮꦶꦝ';
+    JAWA['snh'] = 'ꦰ꧀ꦟ';
+    JAWA['s nh'] = 'ꦱ꧀ꦟ';
+    JAWA['rf'] = 'ꦫ꧀ꦥ꧀ꦥ꦳';
+    JAWA['fv'] = 'ꦫ꧀ꦮ꧀ꦮ꦳'; 
+ 
+    JAWA['sṭ'] = 'ꦰ꧀ꦛ';
+    JAWA['sṭh'] = 'ꦰ꧀ꦜ';
+    JAWA['sḍ'] = 'ꦰ꧀ꦝ';
+    JAWA['sḍh'] = 'ꦰ꧀ꦞ';
+    JAWA['ḍh'] = '\uA99E';
+    JAWA['ḍ'] = '\uA99D';
+    JAWA['nḍ'] = '\uA99F\uA9C0\uA99D';
+    JAWA['nḍh'] = '\uA99F\uA9C0\uA99E';
+    JAWA['nṭ'] = '\uA99F\uA9C0\uA99B';
+    JAWA['nṭh'] = '\uA99F\uA9C0\uA99C';
+    JAWA['nny'] = '\uA99A';
+    JAWA['ṭ'] = '\uA99B'; 
+    JAWA['ñ'] = 'ꦚ';
+    JAWA['ḥ'] = '\uA9B2\uA9B3'; 
+    
+    // konsonan sisip
+    JAWA['+ya'] = '\uA9BE';
+    JAWA['+ra'] = '\uA9BF';
+    JAWA['+re'] = '\uA9DB'; 
+  
+    // suara vokal 
+    JAWA['a'] = ''; 
+    JAWA['ao'] = 'ꦲꦺꦴ';   
+    JAWA[' a'] = ''; 
+    JAWA[' i'] = 'ꦶ'; 
+    JAWA[' u'] = 'ꦸ'; 
+    JAWA[' é'] = 'ꦺ'; 
+    JAWA[' è'] = 'ꦺ'; 
+    JAWA[' ê'] = 'ꦼ'; 
+    JAWA[' e'] = 'ꦼ'; 
+    JAWA[' o'] = 'ꦺꦴ';
+    JAWA['aa'] = '\uA9B4';
+    JAWA['a a'] = '\uA9B4';
+    JAWA['a u'] = 'ꦮꦸ';
+    JAWA['a e'] = 'ꦮꦼ';
+    JAWA['a è'] = 'ꦮꦺ';
+    JAWA['a é'] = 'ꦮꦺ';
+    JAWA['a ê'] = 'ꦮꦼ';
+    JAWA['a o'] = 'ꦮꦺꦴ';
+    JAWA['ii'] = '\uA9B7';
+    JAWA['a i'] = 'ꦮꦶ';  
+    JAWA['i i'] = '\uA9B7';
+    JAWA['uu'] = '\uA9B9';
+    JAWA['u u'] = '\uA9B9';
+    JAWA['u i'] = '\uA9C0\uA9AE\uA9B6';
+    JAWA['u o'] = '\uA9C0\uA9AE\uA9BA\uA9B4';
+    JAWA['u a'] = '\uA9C0\uA9AE';
+    JAWA['u è'] = '\uA9C0\uA9AE\uA9BA';
+    JAWA['u é'] = '\uA9C0\uA9AE\uA9BA';
+    JAWA['u e'] = '\uA9C0\uA9AE\uA9BC';
+    JAWA['u ê'] = '\uA9C0\uA9AE\uA9BC';
+    JAWA['i a'] = '\uA9BE';
+    JAWA['i u'] = '\uA9BE\uA9B8';
+    JAWA['i o'] = '\uA9BE\uA9BA\uA9B4';
+    JAWA['i è'] = '\uA9BE\uA9BA';
+    JAWA['i é'] = '\uA9BE\uA9BA';
+    JAWA['i e'] = '\uA9BE\uA9BC';
+    JAWA['i ê'] = '\uA9BE\uA9BC';
+    JAWA['i'] = '\uA9B6';
+    JAWA['u'] = '\uA9B8';
+    //'ï¿½'] = '\u200c';
+    JAWA['ei'] = 'ꦏꦶ';
+    JAWA['o'] = '\uA9BA\uA9B4';
+    JAWA['e'] = '\uA9BC'; 
+    JAWA['ea'] = 'ꦏ'; 
+    JAWA['êa'] = 'ꦏ';
+    JAWA['é'] = '\uA9BA';
+    JAWA['è'] = '\uA9BA';
+    JAWA['ê'] = '\uA9BC';
+    JAWA['ai'] = '\uA9BB';
+    JAWA['au'] = '\uA9BB\uA9B4';
+    JAWA['au i'] = 'ꦻꦴꦮꦶ';
+    JAWA['au a'] = 'ꦮ';
+    JAWA['au u'] = 'ꦻꦴꦮꦸ';
+    JAWA['au o'] = 'ꦻꦴꦮꦺꦴ';
+    JAWA['au è'] = 'ꦻꦴꦺꦶ';
+    JAWA['au é'] = 'ꦻꦴꦮꦺ';
+    JAWA['au ê'] = 'ꦻꦴꦮꦼ';
+    JAWA['au e'] = 'ꦺꦴꦮꦼ';
+    JAWA['ai i'] = 'ꦻꦮꦶ';
+    JAWA['ai u'] = 'ꦻꦪꦸ';
+    JAWA['ai o'] = 'ꦻꦪꦺꦴ';
+    JAWA['ai è'] = 'ꦻꦮꦺ';
+    JAWA['ai é'] = 'ꦻꦮꦺ';
+    JAWA['ai ê'] = 'ꦻꦮꦼ';
+    JAWA['ai e'] = 'ꦻꦮꦼ';
+    JAWA['ai a'] = 'ꦻꦪ';
+    JAWA['aui'] = 'ꦻꦴꦮꦶ';
+    JAWA['aua'] = 'ꦻꦴꦮ';
+    JAWA['auu'] = 'ꦻꦴꦮꦸ';
+    JAWA['auo'] = 'ꦻꦴꦮꦺꦴ';
+    JAWA['auè'] = 'ꦻꦴꦮꦺ';
+    JAWA['aué'] = 'ꦻꦴꦮꦺ';
+    JAWA['auê'] = 'ꦻꦴꦮꦼ';
+    JAWA['aue'] = 'ꦺꦴꦮꦼ';
+    JAWA['aii'] = 'ꦻꦮꦶ';
+    JAWA['aiu'] = 'ꦻꦪꦸ';
+    JAWA['aio'] = 'ꦻꦪꦺꦴ';
+    JAWA['aiè'] = 'ꦻꦪꦺ';
+    JAWA['aié'] = 'ꦻꦪꦺ';
+    JAWA['aiê'] = 'ꦻꦪꦼ';
+    JAWA['aie'] = 'ꦻꦪꦼ';
+    JAWA['aia'] = 'ꦻꦪ'; 
+    JAWA['oi'] = 'ꦺꦴꦲꦶ'; 
+    JAWA['oai'] = 'ꦺꦴꦮꦻ'; 
+    JAWA['oau'] = 'ꦺꦴꦮꦻꦴ'; 
+    JAWA['oêo'] = 'ꦺꦴꦮꦼꦴ'; 
+    JAWA['oeo'] = 'ꦺꦴꦮꦼꦴ';
+    JAWA['êo'] = 'ꦼꦴ';
+    JAWA['eo'] = 'ꦼꦴ';
+    JAWA['éo'] = 'ꦺꦪꦺꦴ';
+    JAWA['èo'] = 'ꦺꦪꦺꦴ';
+    JAWA['èu'] = 'ꦺꦪꦸ';
+    JAWA['éu'] = 'ꦺꦪꦸ';
+    JAWA['ia'] = 'ꦶꦪ';
+    JAWA['ua'] = 'ꦸꦮ';
+    JAWA['èa'] = 'ꦺꦪ';
+    JAWA['éa'] = 'ꦺꦪ';  
+    JAWA['ui'] = 'ꦸꦮꦶ'; 
+    JAWA['ei'] = 'ꦼꦮꦶ'; 
+    JAWA['êi'] = 'ꦼꦮꦶ'; 
+    JAWA['èi'] = 'ꦺꦮꦶ'; 
+    JAWA['éi'] = 'ꦺꦮꦶ'; 
+    JAWA['uè'] = 'ꦸꦮꦺ'; 
+    JAWA['ué'] = 'ꦸꦮꦺ'; 
+    JAWA['ue'] = 'ꦸꦮꦼ'; 
+    JAWA['uê'] = 'ꦸꦮꦼ'; 
+    JAWA['iu'] = 'ꦶꦪꦸ'; 
+    JAWA['iè'] = 'ꦶꦪꦺ'; 
+    JAWA['ié'] = 'ꦶꦪꦺ'; 
+    JAWA['io'] = 'ꦶꦪꦺꦴ'; 
+    JAWA['iê'] = 'ꦶꦪꦼ'; 
+    JAWA['ie'] = 'ꦶꦪꦼ';
+    JAWA['è a'] = 'ꦺꦮ';
+    JAWA['è è'] = 'ꦺꦮꦺ';
+    JAWA['é é'] = 'ꦺꦮꦺ';
+    JAWA['è i'] = 'ꦺꦮꦶ';
+    JAWA['é i'] = 'ꦺꦮꦶ';
+    JAWA['é a'] = 'ꦺꦾ';
+    JAWA['è o'] = 'ꦺꦮꦺꦴ';
+    JAWA['é o'] = 'ꦺꦮꦺꦴ';
+    JAWA['è u'] = 'ꦺꦮꦸ';
+    JAWA['é u'] = 'ꦺꦮꦸ';
+    JAWA['e a'] = 'ꦼꦮ';
+    JAWA['e o'] = 'ꦼꦮꦺꦴ';
+    JAWA['e é'] = 'ꦼꦮꦺ';
+    JAWA['e è'] = 'ꦼꦮꦺ';
+    JAWA['e u'] = 'ꦼꦮꦸ';
+    JAWA['e i'] = 'ꦼꦮꦶ';
+    JAWA['ee'] = 'ꦺ';
+    JAWA['è e'] = 'ꦺꦮꦼ';
+    JAWA['è e'] = 'ꦺꦮꦼ'; 
+    JAWA['oa'] = 'ꦺꦴꦮ';
+    JAWA['ou'] = 'ꦺꦴꦮꦸ'; 
+    JAWA['oe'] = 'ꦺꦴꦮꦼ'; 
+    JAWA['oè'] = 'ꦺꦴꦮꦺ'; 
+    JAWA['oé'] = 'ꦺꦴꦮꦺ'; 
+    JAWA['oê'] = 'ꦺꦴꦮꦼ'; 
+    JAWA['oo'] = 'ꦺꦴꦮꦺꦴ';  
+    JAWA['o a'] = 'ꦺꦴꦮ'; 
+    JAWA['o i'] = 'ꦺꦴꦮꦶ'; 
+    JAWA['o u'] = 'ꦺꦴꦮꦸ'; 
+    JAWA['o e'] = 'ꦺꦴꦮꦼ'; 
+    JAWA['o è'] = 'ꦺꦴꦮꦺ'; 
+    JAWA['o é'] = 'ꦺꦴꦮꦺ'; 
+    JAWA['o ê'] = 'ꦺꦴꦮꦼ'; 
+    JAWA['o o'] = 'ꦺꦴꦮꦺꦴ';
+    JAWA[' ai'] = 'ꦻ'; 
+    JAWA[' au'] = 'ꦻꦴ'; 
+    JAWA[' aè'] = 'ꦮꦺ'; 
+    JAWA[' aé'] = 'ꦮꦺ'; 
+    JAWA[' aê'] = 'ꦮꦼ'; 
+    JAWA[' ae'] = 'ꦮꦼ';
+    JAWA['aè'] = 'ꦲꦺ';
+    JAWA['aé'] = 'ꦲꦺ';
+    JAWA['ae'] = 'ꦲꦼ';
+    JAWA['aê'] = 'ꦲꦼ'; 
+    JAWA['re'] = 'ꦉ'; 
+    JAWA[' le'] = '꧀ꦊ'; 
+    JAWA[' lê'] = '꧀ꦊ';
+    JAWA[' leo'] = 'ꦋ'; 
+    JAWA['rê'] = 'ꦉ';
+    JAWA['ubti'] = 'ꦹꦧ꧀ꦠꦶ';
+    JAWA['ucti'] = 'ꦹꦕ꧀ꦠꦶ';
+    JAWA['udti'] = 'ꦹꦢ꧀ꦠꦶ';
+    JAWA['ugti'] = 'ꦹꦒ꧀ꦠꦶ';
+    JAWA['ujti'] = 'ꦹꦗ꧀ꦠꦶ';
+    JAWA['ukti'] = 'ꦹꦏ꧀ꦠꦶ';
+    JAWA['ulti'] = 'ꦹꦭ꧀ꦠꦶ';
+    JAWA['umti'] = 'ꦹꦩ꧀ꦠꦶ';
+    JAWA['upti'] = 'ꦹꦥ꧀ꦠꦶ';
+    JAWA['urti'] = 'ꦹꦫ꧀ꦠꦶ';
+    JAWA['utti'] = 'ꦹꦠ꧀ꦠ';
+    JAWA['uwti'] = 'ꦹꦮ꧀ꦠꦶ';
+    JAWA['unti'] = 'ꦹꦤ꧀ꦠꦶ';
+    JAWA['ungti'] = 'ꦹꦔ꧀ꦠꦶ';
+    JAWA['bukti'] = 'ꦨꦹꦏ꧀ꦠꦶ';
+    JAWA['bakti'] = 'ꦨꦏ꧀ꦠꦶ';
+    JAWA['sakti'] = 'ꦯꦏ꧀ꦠꦶ'; 
+      
+    // angka
+    JAWA['0'] = '꧐';
+    JAWA['1'] = '꧑';
+    JAWA['2'] = '꧒';
+    JAWA['3'] = '꧓';
+    JAWA['4'] = '꧔';
+    JAWA['5'] = '꧕';
+    JAWA['6'] = '꧖';
+    JAWA['7'] = '꧗';
+    JAWA['8'] = '꧘';
+    JAWA['9'] = '꧙';
+    JAWA['.'] = '\uA9C9';
+    JAWA[','] = '\uA9C8'; 
+    JAWA['\u0020'] = '';
+    JAWA['\u200c'] = '\u200c';
+    JAWA['\u0028'] = '\uA9CC';
+    JAWA['\u0029'] = '\uA9CD';
+    JAWA['\u007B'] = '꧁';
+    JAWA['\u007C'] = '\uA9CB';
+    JAWA['\u007D'] = '꧂';
+    JAWA[' '] = '꧋';
+////////////////////////////////////////////////////////////////////////////
+    
+PAT_V     ='1'
+PAT_VK    ='2'
+PAT_KV    ='3'
+PAT_KVK   ='4'
+PAT_KCV   ='5'
+PAT_KCVK  ='6'
+////////////////////////////////////////////////////////////////////////////
+function jawaahir (huruf)
+////////////////////////////////////////////////////////////////////////////
+{
+    var retval = ''
+    if (huruf == 'ng' || huruf == 'nk' || huruf == ' basa' || huruf == ' yasmi' || huruf == 'r' || huruf == ' omahku' || huruf == ' omahmu' || huruf == 'h') {
+        retval = JAWA['+' + huruf]
+    } else {
+        retval = JAWA[huruf] + JAWA['+ï']
+    }
+    
+    return retval
+} // end jawaahir (...)
+////////////////////////////////////////////////////////////////////////////
+function Latin2Jawa(iStr)
+////////////////////////////////////////////////////////////////////////////
+{    
+    var jawaText = ''
+    
+    iStr = iStr.toLowerCase()
+    var iLength = iStr.length
+    var idx = 0
+    var jump = 0
+    var tStr = ''
+    var oStr = ''
+    var r
+    var lkj
+    var suku
+    var polasuku = '0'
+    
+    // Pola V, VK, K, KV, KVK, KCV, KCVK:
+    var KONS = 'ngnny|nk| basa|id|snh|s nh|aia|dhh|thh|dars|durs|dors|ders|dêrs|dèrs|dérs|dairs|daurs|deors|ras|rdh|rjh|rsh|rgh|rbh|rkh|rch|rph|rnh|rth|saur|sair|sur|sor|ser|sèr|sér|sêr|syr|sk|sr|sp|bs|ps|rs|rf|rv|rq|rh|rm|rl|rj|rp|rn|ry|rw|rc|rg|rk|rd|rt|ngbh|ngkh|ngdh|ngth|ngch|ngjh|nggh|ngph|ngsh|ny|ngk|ngb|ngc|ngd|ngg|ngh|ngn|ngl|ngs|ngm|ngp|ngn|ngt|ngw|ngj|ngy|ngf|ngv|hdh|hch|hbh|sch|hgh|hjh|hkh|hph|hth|nch|nc|dh|hw|hs|hp|ht|hk|hg|hc|hq|hb|dz|kh|ui|bh|ea|êa|th|gh|hd|hl|hm|hn|n c|ch|ks|sc|sh|ss|ph|jn|jh|sjh|sj|sn|sl|sw|[b-dfgj-mpqtv-z]|nny|njh|njn|nj|rḍh|rṭh|nṭh|rṭ|nṭ|nḍh|ngḍh|ngṭh|ngñy|ngḍ|ngṭ|ngṣ|ngç|hḍ|hṭ|nḍ|rḍ|hṣ|nṭ|nh|hṭ|hḍ|ḍh|ṭh|ḥ|ṭ|ḍ|ṣ|j|hḍh|hṭh|sṭh|sḍh|sḍ|sṭ|nnyy|ng|h|ç|hñ|ñy|ñ|s|r|n'
+    var VOK  = "bukti|sakti|bakti|aia|ia i|ubti|ucti|udti|ugti|ujti|ukti|ulti|umti|unti|upti|urti|usti|utti|uwti|ao|ia o|ia u|ia è|ia é|ia e|ia ê| leo| lê| le|re|rê| ia|aui|ee|aua|auo|auè|aué|auê|aue|aio|aiu|aiè|aié|aiê|aie|uai|uao|uau|oai|oau|oao|ao|aè|aé|aê|ae|ua|oa|ue|uê|uè|ué|oe|oê|oè|oé|o o|o a|o i|o u|o ê|o e|o è|oé|au i|au a|au o|au è|au é|au ê|au e|ai a|ai o|ai u|ai è|ai é|ai ê|ai e| ao| au| aè| aé| ae aê| ai|\u000A|ui|uè|ué|uê|ue|êi|ei|èi|éi|iu|iè|ié|iê|ie|io|oo|oa|ou|oê|oe|oè|oé|ie|a i|èa|éa|è e|é e|è a|é a|è o|é o|è u|é u|è i|é i|è è|é é|e a|e o|e u|e è|e é|e i| i|a u|a o|a è|a é|a ê|a e| i| u| o| é| è| ê| e| a|ai|au|éi|ei|aa|a a|i i|u u|u i|oai|oau|oeo|oêo|oi|u o|u é|u è|u a|i a|i o|i u|i è|i é|i ê|i e|iau|iao|ieo|iêo|eo|êo|ua|èo|éo|ia|io|iu|ua|eo|ii|uu|[aeiouèêé]|å"
+    //VOK  = 'ras|aia|ia i|ubti|ucti|udti|ugti|ujti|ukti|ulti|umti|unti|upti|urti|usti|utti|uwti|ao|ia o|ia u|ia è|ia é|ia e|ia ê|re|rê|lê|le| aui|aua|auo|auè|aué|auê|aue|aio|aiu|aiè|aié|aiê|aie|o o|o a|o i|o u|o ê|o e|oè|o é|ai a|au i|au a|au o|au è|au é|au ê|au e|ai a|ai o|ai u|ai è|ai é|ai ê|ai e| ao| au| aè| aé| ae aê| ai|aè|aé|ae|aê|ui|uè|ué|uê|ue|êi|ei|èi|éi|iu|iè|ié|iê|ie|io|oo|oa|ou|oê|oè|oé|ie|a i|èa|éa|è e|é e|è a|é a|è o|é o|è u|é u|è i|é i|e a|e i|e u|e o|e è|e é|e i| i| u| o| é| è| ê| e| a|ai|au|éi|ei|aa|a a|i i|u u|u i|u o|u é|u è|u a|i a|i o|i u|i è|i é|i e|i ê|éo|êo|oai|oau|oeo|oêo|oi|au|èo|éo|ia|eo|ua|ii|uu|[aeiouèêé¿½]|å'
+    var CAKRA  = '[yr]'
+    var LKJ = '^'
+    LKJ += '('+KONS+')?'             // group(1), K
+    LKJ += '('+CAKRA+')?'              // group(2), C
+    LKJ += '('+VOK+')'               // group(3), V
+    LKJ += '('+KONS+')?'              // group(4), K
+    LKJ += '('+VOK+'|'+CAKRA+')?'       // group(5), V|C
+    KONSONAN = '^('+KONS+')'
+    var DIGIT = '^([\u200c()\u007B\u007C\u007D,.0-9\u0020 ]+)'
+    
+    while (idx < iLength) {
+        suku = ''
+        r = iStr.match(LKJ)
+        if (r != null) {
+            // cari pola:
+            if (r[1] != undefined) {
+                if (r[4] != undefined) {
+                    if (r[2] != undefined) {
+                        if (r[5] != undefined) {
+                            polasuku = PAT_KCV 
+                        } else {
+                            polasuku = PAT_KCVK 
+                        }
+                    } else {
+                        if (r[5] != undefined) {
+                            polasuku = PAT_KV
+                        } else {
+                            polasuku = PAT_KVK
+                        }
+                    }
+                } else {
+                    if (r[2] != undefined) {
+                        polasuku = PAT_KCV
+                    } else {
+                        polasuku = PAT_KV
+                    }
+                }
+            } else {
+                if (r[4] != undefined) {
+                    if (r[5] != undefined) {
+                        polasuku = PAT_V
+                    } else {
+                        polasuku = PAT_VK
+                    }
+                } else {
+                    polasuku = PAT_V
+                }
+            }
+            
+            // bentuk:
+            if (polasuku == PAT_KCVK) {
+                suku = r[1] + r[2] + r[3] + r[4]
+                lkj  = JAWA[r[1]]
+                lkj += JAWA['+' + r[2] + 'a']
+                lkj += JAWA[r[3]]
+                lkj += jawaahir(r[4])
+            } else if (polasuku == PAT_KCV) {
+                suku = r[1] + r[2] + r[3]
+                lkj  = JAWA[r[1]]
+                lkj += JAWA['+' + r[2] + 'a']
+                lkj += JAWA[r[3]]
+            } else if (polasuku == PAT_KVK) {
+                suku = r[1] + r[3] + r[4]
+                lkj  = JAWA[r[1]]
+                lkj += JAWA[r[3]]
+                lkj += jawaahir(r[4])
+            } else if (polasuku == PAT_KV) {
+                suku = r[1] + r[3]
+                lkj  = JAWA[r[1]]
+                lkj += JAWA[r[3]]
+            } else if (polasuku == PAT_VK) {
+                suku = r[3] + r[4]
+                lkj  = JAWA[r[3].toUpperCase()]
+                lkj += jawaahir(r[4])
+            } else {
+                suku = r[3]
+                lkj = JAWA[suku.toUpperCase()]
+            } // end if
+            oStr += lkj //+ ':'
+            tStr += suku + '(' + polasuku + '):'
+        } else {
+            r = iStr.match(KONSONAN)
+            if (r != null) {
+                suku   = r[1]
+                lkj = jawaahir(suku)
+                oStr += lkj
+                tStr += suku + ";"
+            } else {
+                r = iStr.match(DIGIT)
+                if (r != null) {
+                    lkj = ''
+                    suku = r[1]
+                    l = suku.length
+                    i = 0
+                    while (i<l) {
+                        lkj += JAWA[suku.substr(i,1)]
+                        i += 1
+                    } //end while
+                    lkj += ''
+                    oStr += lkj
+                } else {
+                    suku = iStr.substr(0,1)
+                    lkj = suku
+                    oStr += suku
+                }
+                //end if
+                tStr += suku + '(?)'
+            } // end if
+        }// end if
+        iStr = iStr.substr(suku.length)
+        idx += suku.length
+    
+    }// end while
+    //return tStr + '&&' + oStr
+    return oStr
+    //return tStr
+}
+////////////////////////////////////////////////////////////////////////////
+var locked = false
+////////////////////////////////////////////////////////////////////////////
+function btJawa2Latin()
+////////////////////////////////////////////////////////////////////////////
+{
+	if (locked == false)
+	{
+	
+		locked = true
+		
+	    var jawaText = document.getElementById('JawaText').value
+	
+	    var latinText = Jawa2Latin(jawaText);
+	    
+	    document.getElementById('LatinText').value = latinText;
+	
+	    locked = false
+	}
+}
+////////////////////////////////////////////////////////////////////////////
+function btLatin2Jawa()
+////////////////////////////////////////////////////////////////////////////
+{
+	if (locked == false)
+	{
+	
+		locked = true
+		
+	    var latinText = document.getElementById('LatinText').value
+	    
+	    var jawaText = Latin2Jawa(latinText);	    
+	    
+	    document.getElementById('JawaText').value = jawaText;
+	    
+	    locked = false
+	}
+}
+////////////////////////////////////////////////////////////////////////////
+function setbg(id,color)
+////////////////////////////////////////////////////////////////////////////
+{
+    document.getElementById(id).style.background=color
+}
+</script>
+</head>
+<div id="page-wrap">
+<form name="conversion"font-family:'Scheherazade',Arial,sans-serif;"><center><h1>KOLOM ꦄꦏ꧀ꦰꦫꦗꦮ꧉</center></h1>
+        <textarea name="JawaTextBox" id="JawaText">꧋</textarea>
+<center><h1>Tuliskan Latin di kolom bawah ini.</h1></center>
+        <textarea name="LatinTextBox" id="LatinText" onkeyup="btLatin2Jawa()" onfocus="setbg('LatinText','#e5fff3');" onblur="btLatin2Jawa();setbg('LatinText','white')"> </textarea><br />
+		        
+<div>
+<tr align="center" class="lat"> 
+</tr><center>
+<td><button type="button" class="bt" onclick="alpha('ṣ')">ṣ.ꦰ</button> <button type="button" class="bt" onclick="alpha('é')">é.ꦺ</button> <button type="button" class="bt" onclick="alpha('ç')">ç.ꦯ</button> <button type="button" class="bt" onclick="alpha('ḍ')">ḍ.ꦝ</button> <button type="button" class="bt" onclick="alpha('ṭ')">ṭ.ꦛ</button> <button type="button" class="bt" onclick="alpha('ñ')">ñ.ꦚ</button> <button type="button" class="bt" onclick="alpha('\u200c')">zwnj</button> <button type="button" class="bt" onclick="alpha('꦳')"> ꦳ </button> <button type="button" class="bt" onclick="alpha('(')">꧌</button> <button type="button" class="bt" onclick="alpha(')')">꧍</button> <button type="button" class="bt" onclick="alpha('{')">꧁</button> <button type="button" class="bt" onclick="alpha('}')">꧂</button> <button type="button" class="bt" onclick="alpha('꧃')">꧃</button> <button type="button" class="bt" onclick="alpha('꧄')">꧄</button> <button type="button" class="bt" onclick="alpha('꧅')">꧅</button>  </center></td>
+</div>
+</form>
+</body><div style="margin-top:5px; text-align:center; color:#000; font-size:21px;" id="clock"></div>
+<center><marquee loop="3">MOHON MA'AF APLIKASI MASIH BANYAK KEKURANGANYA </center>	</marquee>
+	<script type="text/javascript">
+			<!--
+			function startTime() {
+				var today=new Date(),
+					curr_hour=today.getHours(),
+					curr_min=today.getMinutes(),
+					curr_sec=today.getSeconds();
+			 curr_hour=checkTime(curr_hour);
+				curr_min=checkTime(curr_min);
+				curr_sec=checkTime(curr_sec);
+				document.getElementById('clock').innerHTML=curr_hour+":"+curr_min+":"+curr_sec;
+			}
+			function checkTime(i) {
+				if (i<10) {
+					i="0" + i;
+				}
+				return i;
+			}
+			setInterval(startTime, 500);
+			//-->
+			</script>
+            
+            
+<div class="tanggal">
+<script>
+var mydate=new Date()
+var year=mydate.getYear()
+if (year < 1000)
+year+=1900
+var day=mydate.getDay()
+var month=mydate.getMonth()
+var daym=mydate.getDate()
+if (daym<10)
+daym="0"+daym
+var dayarray=new Array("Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu")
+var montharray=new Array("Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember")
+document.write("<b><i><u>"+dayarray[day]+", "+daym+" "+montharray[month]+" "+year+"</b></i></u>")
+</script>
+</div>
+</center>
+</html>
