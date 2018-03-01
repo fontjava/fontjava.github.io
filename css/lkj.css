@@ -1,0 +1,126 @@
+/ * * /
+
+body {
+height: 100%; padding-top: 0; margin: 0; background-color: #ffffff;}
+
+#wadah{
+    min-height: 100%;
+    position: relative;
+text-align: center; font-size: 0.85em}
+
+#zoom {width: 200px; height: 10px; margin: 3px auto; color: # 333}
+
+tabel # ruang kerja {margin: 0; position: relative; border: 2px solid # 444; border-color: # 444; background-color: # E6E1CA;}
+
+tabel # ruang kerja h1 {margin: 0; font-size: 1.2em; background-color: # 666; background-image: url (title.png); background-repeat: repeat-x; Warna: # fff}
+
+tabel # ruang kerja #info {height: 20em; overflow: auto; margin: 2px; padding: 2px; color: # 333; text-align: center; position: relative; font-size: 1em}
+
+tabel # ruang kerja #info a {color: # 0B9; }
+
+tabel # meja kerja #output {margin: 1px; 0px; 0px; 0px; border-collapse: collapse}
+tabel #output # ruang kerja th {padding: 0 0 1px 0; font-weight: normal; font-size: 2em}
+
+tabel # ruang kerja #output td {padding: top: 5px; font-weight: normal}
+tabel # keluaran textarea {
+	width: 100%;
+	height: 70px;
+	border: 3px #cdddc padat;
+	padding: 0px;
+	font-family: "Scheherazade", sans-serif;
+    background: putih;
+}
+
+textarea # SundaText {
+	font-family: "Scheherazade", sans-serif;
+	font-size: 1.0em;
+	width: 100%;
+	height: 90px;
+}
+
+tabel # ruang kerja #keyboard {text-align: center}
+tabel # meja kerja #keyboard {border-collapse: collapse; margin: 1px; auto 0 auto}
+tabel # ruang kerja #keyboard td {padding: 0px; font-size: 0.1px}
+
+
+Tombol {width: 25px; height: 35px; margin: 0px;
+  color: # 655777;
+font-family: "Scheherazade";
+font-size: 17px;
+font-weight: bold;
+padding: 1px 2px;
+text-color: # f0f0f0;
+text-shadow: 0px 1px 0px # B0B0B0;
+-webkit-border-radius: 15px;
+-moz-border-radius: 15px;
+border-radius: 15px;
+border: 1px solid # 8c8a8c;
+display: inline-block;
+-webkit-box-shadow: inset 0px 1px 0px 0px # c9c9c9;
+-moz-box-shadow: inset 0px 1px 0px 0px # c9c9c9;
+box-shadow: inset 0px 1px 0px 0px # c9c9c9;
+background: -webkit-gradien (linier, kiri atas, kiri bawah, warna-stop (0,05, # 9c9c9c), warna-stop (1, # 787678));
+background: -moz-linear-gradient (tengah atas, # 9c9c9c 5%, # 787678 100%);
+filter: PROGID: DXImageTransform.Microsoft.gradient (startColorstr = '# 9c9c9c', endColorstr = '# 787678');
+background-color: # 9c9c9c;
+}
+Tombol: hover {
+background: -webkit-gradien (linier, kiri atas, kiri bawah, warna-stop (0,05, # 787678), warna-stop (1, # 9c9c9c));
+background: -moz-linear-gradient (tengah atas, # 787678 5%, # 9c9c9c 100%);
+filter: PROGID: DXImageTransform.Microsoft.gradient (startColorstr = '# 787678', endColorstr = '# 9c9c9c');
+background-color: # 787678;
+}
+Tombol: aktif {
+position: relative;
+top: 1px;
+}
+tombol # backspace {width: 4em; margin-bottom: 4px}
+
+
+span.help {position: relative; kursor: pointer; padding: 0 3px; margin: 1px; color: # 000; font-size: 11px; border: 1px solid # DCD7B6; border-color: # D2CCA2}
+span.help:hover {background-color: # DCD7B6;}
+#info p {margin: 0 0 0.6em 0; font-size: 15px}
+#info h3 {margin: 0 0 0.6em 0; font-size: 12px;}
+#helpdiv {display: none}
+
+#normalState {color: blue}
+#shiftState {}
+#altgrState {}
+#shiftAltgrState {}
+#normalStateCap {color: aqua}
+#shiftStateCap {}
+#altgrStateCap {}
+#shiftAltgrStateCap {}
+
+button.Control {width: 4.5em;}
+button.ClearBack {color: red; font-weight: bold; width: 4em;}
+button.Altr {width: 4em;}
+button.AltGr {width: 3.5em}
+button.Shift {width: 5em}
+button.CapsLock {color: blue; font-weight: bold; width: 4em}
+button.Enter {width: 4em}
+button.backspace {width: 10em}
+button.Deadkey {width: 2em}
+button.Tab {width: 4em;}
+
+
+#shiftState .Shift {color: blue; font-weight: bold}
+#altgrState .AltGr {color: blue; font-weight: bold}
+#shiftAltgrState .AltGr, #shiftAltgrState .Shift {color: blue; font-weight: bold}
+
+#normalStateCap .CapsLock {color: blue; font-weight: bold}
+#shiftStateCap .CapsLock {color: blue; font-weight: bold}
+#shiftStateCap .Shift {color: blue; font-weight: bold}
+
+#shiftAltgrStateCap .CapsLock, #shiftAltgrStateCap .AltGr, #shiftAltgrStateCap .Shift {color: red; font-weight: bold}
+
+div # disclaimer {text-align: center; Warna: # fff; margin: 0 auto ;; width: 400px; font-size: 0.70em}
+div # cipta {padding: 5px; text-align: center; font-size: 0.75em; color: # fff}
+div # hak cipta {color: # fff}
+
+iframe # IFR {width: 1px; height: 1px; visibility: hidden}
+
+#plugin {width: 380px; text-align: center; Warna: # fff; margin: 20px auto; padding: 0 20px 20px 20px; background-color: # 246; border: 2px # fff padat; }
+
+# G1 {; text-align: center ;; margin: 20px 0 0 0}
+# G2 {; text-align: center; margin: 20px 0}
