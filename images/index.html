@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Aplikasi aksara Jawa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">  <!-- Optional Bootstrap theme -->
+  <link rel="stylesheet" href="../css/bootstrap-theme.css">
+
+  <style type="text/css">
+  .scroll-area {
+    height: 250px;
+    position: relative;
+    overflow: auto;
+  }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <h2>Menu Pilihan</h2>
+    <p>Gulirkan area di bawah bilah navigasi dan lihat bagaimana item menu disorot secara otomatis berdasarkan pada posisi gulir. Item dalam submenu dropdown juga akan disorot.</p>
+    <nav id="myNavbar" class="navbar navbar-default" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse"> 
+                <span class="sr-only">Toggle navigation</span> 
+                <span class="icon-bar"></span> 
+                <span class="icon-bar"></span> 
+                <span class="icon-bar"></span> 
+            </button>
+        <a class="navbar-brand" href="#">MENU</a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#section-1">Section 1</a></li>
+          <li><a href="#section-2">Section 2</a></li>
+          <li><a href="#section-3">Section 3</a></li>
+          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Section 4<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#section-4dot1">Section 4.1</a></li>
+              <li><a href="#section-4dot2">Section 4.2</a></li>
+              <li><a href="#section-4dot3">Section 4.3</a></li>
+            </ul>
+          </li>
+          <li><a href="#section-5">Section 5</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="scroll-area" data-spy="scroll" data-offset="0">
+      <div class="section">
+        <h3 id="section-1">Section 1 <small><a href="#" onclick="removeSection(this);">× Remove this section</a></small></h3>
+        <p>DISINI.</p>
+        <p>JUGA DISINI.</p>
+      </div>
+      <hr>
+      <div class="section">
+        <h3 id="section-2">Section 2 <small><a href="#" onclick="removeSection(this);">× Remove this section</a></small></h3>
+        <p>DISINI.</p>
+        <p>JUGA DI SINI.</p>
+      </div>
+      <hr>
+      <div class="section">
+        <h3 id="section-3">Section 3 <small><a href="#" onclick="removeSection(this);">× Remove this section</a></small></h3>
+        <p>DISINI.</p>
+        <p>JUGA DISINI.</p>
+        <p>DISINI PULA.</p>
+      </div>
+      <hr>
+      <h3>Section 4</h3>
+      <p>DISINI.</p>
+      <div class="section">
+        <h4 id="section-4dot1">Section 4.1 <small><a href="#" onclick="removeSection(this);">× Remove this section</a></small></h4>
+        <p>DI SINI.</p>
+        <p>DISINI JUGA.</p>
+      </div>
+      <div class="section">
+        <h4 id="section-4dot2">Section 4.2 <small><a href="#" onclick="removeSection(this);">× Remove this section</a></small></h4>
+        <p>DISINI.</p>
+        <p>DISINI JUGA.</p>
+      </div>
+      <div class="section">
+        <h4 id="section-4dot3">Section 4.3 <small><a href="#" onclick="removeSection(this);">× Remove this section</a></small></h4>
+        <p>DISINI.</p>
+        <p>JUGA DISINI.</p>
+      </div>
+      <hr>
+      <div class="section">
+        <h3 id="section-5">Section 5 <small><a href="#" onclick="removeSection(this);">× Remove this section</a></small></h3>
+        <p>DISINI.</p>
+        <p>JUGA DISINI.</p>
+        <p>DISINI PULA.</p>
+        <p>PULA DISINI.</p>
+        <p>DISINI JUGA PULA.</p>
+      </div>
+    </div>
+    <hr>
+    <h4 id="info" class="text-info">Currently you are viewing - Section 1</h4>
+  </div>
+
+  <script src="js/jquery-2.2.0.min.js"></script>
+  <script src="bootstrap/js/bootstrap.js"></script>
+
+  <script type="text/javascript">
+  $(document).ready(function()
+  {
+    removeSection = function(e)
+    {
+      $(e).parents(".section").remove();
+      $('[data-spy="scroll"]').each(function()
+      {
+        var $spy = $(this).scrollspy("refresh");
+      });
+    }
+    $(".scroll-area").scrollspy(
+    {
+      target: "#myNavbar"
+    });
+    $("#myNavbar").on("activate.bs.scrollspy", function()
+    {
+      var currentItem = $(".nav li.active > a").text();
+      $("#info").empty().html("Currently you are viewing - " + currentItem);
+    })
+  });
+  </script>
+
+</body>
+
+</html>
